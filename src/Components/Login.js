@@ -9,7 +9,7 @@ export default function Login() {
     console.log(email, password, "hi");
 
     axios.post({
-      url: "http://localhost:3000/login",
+      url: "http://localhost:5000/login",
       data: {
         email,
         password,

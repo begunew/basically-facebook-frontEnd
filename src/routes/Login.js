@@ -6,15 +6,17 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   const handleSubmit = () => {
-    console.log(email, password, "hi");
-
-    axios.post({
-      url: "http://localhost:5000/login",
-      data: {
+    axios
+      .post("http://localhost:5000/auth/login", {
         email,
         password,
-      },
-    });
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
